@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script>
+
+    <!-- AR.js を読み込む -->
+<!--    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>-->
+
+
+</head>
+<body style='margin: 0; overflow: hidden;'>
+<a-scene vr-mode-ui="enabled: true">
+<!--
+
+
+  <a-entity camera   id="camera" 
+             position="0 0 0"
+              near="0.01"
+            rotation="0 0 0"
+            fov="120"
+            
+></a-entity>
+    
+-->
+    
+        <!-- オブジェクトの追加 -->
+    
+        <a-entity id="root"
+              position="0 -0.5 -2"
+                 rotation="0 0 0"
+              scale="2 2 2"
+              shadow="receive: true">
+            
+ <!-- キャラクターの追加 -->   
+            <a-entity gltf-model="src: url(Sval1.glb);"
+                animation-mixer
+                position="0 0 0"
+                rotation="0 45 0"
+                scale="1 1 1"
+                shadow="receive: false">
+            </a-entity>
+            
+<!--ステージの追加 -->         
+            <a-entity gltf-model="src: url(Sval_stage.glb);"
+
+                position="1.5 0.35 1.5"
+                rotation="0 0 0"
+                scale="0.7 0.7 0.7"
+                shadow="receive: true">
+            </a-entity>
+
+
+        
+<!--
+ 
+       <a-entity id="root_floor"
+              position="0 0 0"
+                 rotation="0 0 0"
+              scale="1 1 1"
+              shadow="receive: true">
+
+        <a-plane position="0 1.5 -1.5"
+                 rotation="0 0 0"
+                  scale="1 1 1"
+                 width="3" height="3"
+                 color="#777"
+                 shadow="receive: true"></a-plane>
+           
+           
+        <a-plane position="0 0 -1"
+                 rotation="-90 0 0"
+                  scale="1 1 1"
+                 width="3" height="3"
+                 color="#977"
+                 shadow="receive: true"></a-plane>
+            
+    </a-entity>  
+            
+-->
+
+
+            
+    <!-- ライト１ -->    
+       <a-entity id="root_light1"
+              position="1 0 1"
+                 rotation="0 30 0"
+              scale="1 1 1"
+              shadow="receive: true">
+           
+        <a-entity light="type: spot; 
+                         angle: 15 ;
+                         color: #fff;
+                         castShadow:true;"
+                  position="0 6 4"
+                  rotation="-60 0 0"
+                  ></a-entity>
+           
+         <a-entity light="type: spot; 
+                         angle: 45 ;
+                         color: #fff;
+                         castShadow:false;"
+                  position="0 6 4"
+                  rotation="-60 0 0"
+                  ></a-entity> 
+         </a-entity>
+          
+
+<!-- ライト２ -->       
+        <a-entity id="root_light2"
+              position="0 0 0"
+                 rotation="0 -100 0"
+              scale="1 1 1"
+              shadow="receive: true">
+           
+        <a-entity light="type: spot; 
+                         angle: 45 ;
+                         color: #f77;
+                         castShadow:false;"
+                  position="0 1 4"
+                  rotation="0 0 0"
+                  ></a-entity>
+           
+             </a-entity>
+
+            
+     </a-entity>
+
+
+
+    
+    
+    
+            <!-- オブジェクトの追加 ここまで-->
+</a-scene>
+</body>
+</html>
